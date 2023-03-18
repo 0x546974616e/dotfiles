@@ -104,8 +104,10 @@ tr_install_bash ()
 {
     tr_install_log Installing '`bash`.'
 
-    tr_install_write_file  bash/.bash_aliases .bash_aliases
-    tr_install_append_file bash/.bashrc       .bashrc
+    tr_install_write_file  bash/.bash_aliases  .bash_aliases
+    tr_install_append_file bash/.bashrc        .bashrc
+    tr_install_write_file  bash/.tr-prompt.sh  .tr-prompt.sh
+    tr_install_write_file  bash/.git-prompt.sh .git-prompt.sh
 }
 
 ################################################################################
