@@ -1,4 +1,3 @@
-
 source $HOME/.git-prompt.sh
 source $HOME/.tr-prompt.sh
 

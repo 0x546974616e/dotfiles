@@ -1,4 +1,3 @@
-
 alias rm='rm -i'
 alias cp='cp -v'
 
