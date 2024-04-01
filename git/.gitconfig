@@ -10,3 +10,9 @@ path = ~/Fafa/.gitconfig
 [core]
 excludesfile = ~/.gitignore
 
+[alias]
+a = add
+s = status
+ss = status -s
+c = commit
+

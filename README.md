@@ -1,3 +1,4 @@
-# dotfiles
+# Dotfiles
+
 Package configuration files
 
