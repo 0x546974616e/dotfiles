@@ -1,0 +1,2 @@
+require("lsp.servers.rust")
+

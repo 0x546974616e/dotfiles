@@ -1,16 +1,15 @@
 
 -- https://neovim.io/doc/user/map.html
--- :help map-modes
-
 -- See :map, :nmap, :vmap, :imap to view current mappings.
 
--- There are two modes often confused as one:
---   - ":help Visual-mode"
---   - ":help Select-mode"
--- The indicator or prefix used in keymaps for these modes are:
---   - ":help mapmode-x": activated only in visual mode
---   - ":help mapmode-s": activated only in select mode
---   - ":help mapmode-v": activated in both visual and select mode
+-- :help map-modes
+-- :help mapmode-x activated only in visual mode
+-- :help mapmode-s activated only in select mode
+-- :help mapmode-v activated in both visual and select mode
+-- :help Visual-mode
+-- :help Select-mode
+
+-- gv gV gn gN
 
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
@@ -23,9 +22,7 @@ vim.keymap.set({"n", "v"}, "<leader>c", [["_c]])
 
 vim.keymap.set({"n", "x", "o"}, "<leader>h", "^") -- g0
 vim.keymap.set({"n", "x", "o"}, "<leader>l", "g_") -- g$
-vim.keymap.set({"n", "x"}, "<leader>m", "|")
-
--- gv gV gn Gn u U gm gM
+vim.keymap.set({"n", "x", "o"}, "<leader><space>", "|") -- gm gM
 
 vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
 vim.keymap.set({"n", "v"}, "<leader>Y", [["+Y]])
