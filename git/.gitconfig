@@ -15,4 +15,7 @@ a = add
 s = status
 ss = status -s
 c = commit
+ls = log --decorate --oneline
+# ls = log --pretty=format:"%C(yellow)%h\\ %Cgreen%ad\\ %Cred%d%Creset%s\\ %Cblue[%cn]" --decorate --date=short
+# ll = log --pretty=format:"%C(yellow)%h\\ %Cgreen%ad\\ %Cred%d%Creset%s\\ %Cblue[%cn]" --decorate --date=short --numstat
 
