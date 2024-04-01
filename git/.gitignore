@@ -1,0 +1,21 @@
+# https://github.com/github/gitignore/
+# https://www.toptal.com/developers/gitignore/api/vim
+# https://raw.githubusercontent.com/github/gitignore/main/Global/Vim.gitignore
+
+# Swap
+.*.swp
+
+# Session
+Session.vim
+Sessionx.vim
+
+# Temporary
+.netrwhist
+*~
+
+# Auto-generated tag files
+tags
+
+# Persistent undo
+[._]*.un~
+

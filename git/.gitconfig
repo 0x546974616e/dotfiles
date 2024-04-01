@@ -1,0 +1,12 @@
+[includeIf "gitdir:~/Documents/"]
+path = ~/Documents/.gitconfig
+
+[includeIf "gitdir:~/Dada/"]
+path = ~/Dada/.gitconfig
+
+[includeIf "gitdir:~/Fafa/"]
+path = ~/Fafa/.gitconfig
+
+[core]
+excludesfile = ~/.gitignore
+
