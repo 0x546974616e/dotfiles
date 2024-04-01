@@ -21,6 +21,7 @@ pathmunge () {
 }
 
 pathmunge "$HOME/bin" after
+pathmunge "$HOME/bin/nvim" after
 pathmunge "$HOME/bin/typst" after
 # pathmunge "$HOME/Android/Sdk/emulator" after
 # pathmunge "$HOME/.amplify/bin" after
