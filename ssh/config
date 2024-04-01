@@ -1,0 +1,30 @@
+# man ssh
+# man ssh_config
+# https://www.ssh.com/academy/ssh
+# /etc/ssh/ssh_config
+# ssh -vT git@github.com
+# ssh -v URL
+
+Host *
+  StrictHostKeyChecking yes
+  ClearAllForwardings yes
+  #? AllowTcpForwarding no
+  ForwardX11Trusted no
+  ForwardX11 no
+  ForwardAgent no
+
+Host github.com
+  User git
+  AddKeysToAgent 3600 # ssh-add -c -L -l -D -t
+  # ssh-keygen -t ed25519 -C "email@example.com"
+  IdentityFile ~/.ssh/id_github_ed25519
+  IdentitiesOnly yes
+
+# Host github.com-repo-1
+#   Hostname github.com
+#   ...
+
+# Host github.com-repo-2
+#   Hostname github.com
+#   ...
+
