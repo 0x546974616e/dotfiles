@@ -12,9 +12,9 @@ excludesfile = ~/.gitignore
 
 [alias]
 a = add
-s = status
-ss = status -s
+s = status -s
+ss = status
 c = commit
-ls = log --decorate --oneline
+l = log --decorate --oneline
 ll = log --decorate --oneline --name-status
 
