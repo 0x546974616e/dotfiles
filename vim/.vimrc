@@ -102,8 +102,9 @@ augroup END
 " Color scheme base16.
 if (has("termguicolors"))
   set termguicolors
-  " colorscheme base16-tomorrow
+  " https://github.com/chriskempson/base16-vim
   colorscheme base16-tomorrow-night-eighties
+  " colorscheme base16-tomorrow
   highlight Comment guifg=#56a64a ctermfg=2
 endif
 
