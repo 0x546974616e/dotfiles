@@ -1,0 +1,22 @@
+#!/bin/bash
+
+usage() {
+    echo -e 'Usage:' $(basename $0) '\033[4mBRIGHTNESS\033[0m'
+    echo
+    echo -e '\033[4mBRIGHTNESS\033[0m between 1 and 100'
+    exit 1
+}
+
+if [ $# -le 0 ] || [ "$1" -le 0 ] || [ "$1" -gt 100 ]
+then
+    usage
+fi
+
+BRIGHTNESS="$(( $1 / 100)).$(( $1 % 100 ))"
+
+SCREEN=$(xrandr | grep " connected" | cut -f 1 -d ' ')
+
+xrandr --output $SCREEN --brightness $BRIGHTNESS;
+
+echo "Screen Brightness level set to" $BRIGHTNESS"%"
+

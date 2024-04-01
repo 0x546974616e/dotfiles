@@ -1,0 +1,33 @@
+#!/bin/bash
+
+usage () {
+  echo 'Usage:' $(basename $0) '[OPTION]...'
+  echo 'Remove backup files (suffixed by "~").'
+# echo '  -a  Remove hidden files'
+  echo '  -d  Starting directory'
+  echo '  -f  Force removal'
+  echo '  -q  Quiet mode'
+  echo '  -r  Remove recursively'
+  echo '  -h  Display help'
+  exit 0
+}
+
+rmbk_opt_d='.'
+rmbk_opt_f='-i'
+rmbk_opt_q='-v'
+rmbk_opt_r='-maxdepth 1'
+
+while getopts ':d:fqrh' arg
+do
+  case $arg in
+    d) rmbk_opt_d=$OPTARG ;;
+    f) rmbk_opt_f='-f' ;;
+    q) rmbk_opt_q='' ;;
+    r) rmbk_opt_r='' ;;
+    h|*) usage ;;
+  esac
+done
+
+/usr/bin/find $rmbk_opt_d $rmbk_opt_r \
+  -type f -name '*~' -exec /usr/bin/rm $rmbk_opt_f $rmbk_opt_q {} +
+
