@@ -18,7 +18,7 @@ vim.keymap.set("x", "p", [["_dP]])
 vim.keymap.set("i", "<C-c>", "<Esc>")
 
 vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
-vim.keymap.set({"n", "v"}, "<leader>c", [["_c]])
+vim.keymap.set({"n", "v"}, "c", [["_c]]) -- <leader>c
 
 vim.keymap.set({"n", "x", "o"}, "<leader>h", "^") -- g0
 vim.keymap.set({"n", "x", "o"}, "<leader>l", "g_") -- g$

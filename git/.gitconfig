@@ -18,5 +18,7 @@ c = commit
 d = diff
 ds = diff --stat
 l = log --decorate --oneline
+g = log --all --decorate --oneline --graph
 ll = log --decorate --oneline --name-status
+alias = config --get-regexp ^alias
 
