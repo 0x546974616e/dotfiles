@@ -1,3 +1,5 @@
+# vim: filetype=.gitconfig
+
 [alias]
 a = add
 # s = status -s
@@ -11,10 +13,13 @@ g = log --all --decorate --oneline --graph
 ll = log --decorate --oneline --name-status
 alias = config --get-regexp ^alias
 
+# Command substitution are executed in subshell.
 s = "!f() { \
   if [ -z \"$1\" ]; then \
+    test -t 1; \
+    local color=$([ $? -eq 0 ] && echo always || echo false); \
     echo \"Changed file\";\
-    git -c color.ui=always status -s | awk '{ print NR, $0 }'; \
+    git -c color.ui=$color status -s | awk '{ print NR, $0 }'; \
     return 1; \
   fi; \
   if [ \"$1\" -eq \"$1\" ] 2>/dev/null; then \
