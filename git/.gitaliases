@@ -1,0 +1,30 @@
+[alias]
+a = add
+# s = status -s
+# ss = status
+c = commit
+p = push
+d = diff
+ds = diff --stat
+l = log --decorate --oneline
+g = log --all --decorate --oneline --graph
+ll = log --decorate --oneline --name-status
+alias = config --get-regexp ^alias
+
+s = "!f() { \
+  if [ -z \"$1\" ]; then \
+    echo \"Changed file\";\
+    git -c color.ui=always status -s | awk '{ print NR, $0 }'; \
+    return 1; \
+  fi; \
+  if [ \"$1\" -eq \"$1\" ] 2>/dev/null; then \
+    local path=\"$(git -c color.ui=false status -s | awk \"NR == $1 { print \\$2 }\")\"; \
+    if [ -n \"$path\" ]; then \
+      echo $1 $path; \
+      git diff $path; \
+      return 1; \
+    fi; \
+  fi; \
+  echo \"Please provide an existing index.\";\
+}; f"
+
