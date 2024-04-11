@@ -26,7 +26,7 @@ vim.keymap.set(
         }
       )
     end
-  end,
+  end
 )
 
 -- Open diagnostics location window.

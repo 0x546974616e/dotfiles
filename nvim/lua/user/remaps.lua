@@ -10,6 +10,7 @@
 -- :help Select-mode
 
 -- gv gV gn gN g; g, gi ga g8 gx
+-- :history / <C-f>
 
 vim.g.mapleader = " " -- ,
 vim.g.maplocalleader = " "

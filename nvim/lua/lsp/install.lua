@@ -31,7 +31,6 @@ if not vim.uv.fs_stat(directory) then
   -- to handle every package and configuration myself to understand everything
   -- under the hood. The git-clone command below acts more as a reminder of what
   -- I've installed and how I did it.
-  -- :messages
   notify("Cloning nvim-lspconfig...")
 
   vim.system({
@@ -42,6 +41,7 @@ if not vim.uv.fs_stat(directory) then
      directory,
   })
 
+  -- :messages
   notify("Cloning nvim-lspconfig done.")
   notify("Please restart Neovim.")
 end

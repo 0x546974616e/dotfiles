@@ -67,3 +67,39 @@ vim.api.nvim_create_autocmd(
   }
 )
 
+-- Remove trailing whitespaces on save.
+local remove_trailing_group = vim.api.nvim_create_augroup(
+  "titan-remove-trailing-whitespaces", {
+    clear = true,
+  }
+)
+
+local function set_remove_trailing(event)
+  vim.api.nvim_create_autocmd(
+    event, {
+      pattern = "*", -- Everything so far
+      group = remove_trailing_group,
+      callback = function()
+        -- TODO
+        -- if !&binary && &filetype != 'diff'
+        --   vim.local_opt.diff ?
+        -- :h 'binary'
+        -- :h 'diff'
+        -- restaure previous search
+
+        -- getpos(".") setpos(".", view) ?
+        local view = vim.fn.winsaveview()
+        -- The e flag is used to skip error when nothing is found.
+        -- pcall(function() vim.cmd([[%s/\s\+$//e]]) end)
+        vim.cmd([[%s/\s\+$//ge]])
+        vim.fn.winrestview(view)
+      end,
+    }
+  )
+end
+
+-- set_remove_trailing("FileWritePre")
+-- set_remove_trailing("FileAppendPre")
+-- set_remove_trailing("FilterWritePre")
+-- set_remove_trailing("BufWritePre")
+
