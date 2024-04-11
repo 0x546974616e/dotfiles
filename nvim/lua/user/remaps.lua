@@ -9,9 +9,9 @@
 -- :help Visual-mode
 -- :help Select-mode
 
--- gv gV gn gN
+-- gv gV gn gN g; g, gi ga g8 gx
 
-vim.g.mapleader = " "
+vim.g.mapleader = " " -- ,
 vim.g.maplocalleader = " "
 
 vim.keymap.set("x", "p", [["_dP]])
@@ -45,7 +45,7 @@ vim.keymap.set("n", "<leader>b", "<cmd>buffers<cr>:buffer<Space>")
 
 vim.keymap.set(
   {"n", "v"}, "<leader>s",
-  function ()
+  function()
     vim.opt_local.hlsearch = not(
       vim.opt_local.hlsearch:get()
     )
@@ -53,8 +53,8 @@ vim.keymap.set(
 )
 
 -- Keybinds to make split navigation easier (see ":help wincmd").
-vim.keymap.set('n', '<C-h>', '<C-w><C-h>')
-vim.keymap.set('n', '<C-l>', '<C-w><C-l>')
-vim.keymap.set('n', '<C-j>', '<C-w><C-j>')
-vim.keymap.set('n', '<C-k>', '<C-w><C-k>')
+vim.keymap.set("n", "<C-h>", "<C-w><C-h>")
+vim.keymap.set("n", "<C-l>", "<C-w><C-l>")
+vim.keymap.set("n", "<C-j>", "<C-w><C-j>")
+vim.keymap.set("n", "<C-k>", "<C-w><C-k>")
 

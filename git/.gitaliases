@@ -11,7 +11,10 @@ ds = diff --stat
 l = log --decorate --oneline
 g = log --all --decorate --oneline --graph
 ll = log --decorate --oneline --name-status
-alias = config --get-regexp ^alias
+alias = "!f() { \
+  git config --get-regexp '^alias' | grep -Ev \"alias\\.(s|alias\\b)\"; \
+  echo alias.s status -s; \
+}; f"
 
 # Command substitution are executed in subshell.
 s = "!f() { \
@@ -30,6 +33,6 @@ s = "!f() { \
       return 1; \
     fi; \
   fi; \
-  echo \"Please provide an existing index.\";\
+  echo \"Please provide an existing index.\"; \
 }; f"
 

@@ -84,11 +84,15 @@ local dot = "·" -- \u00B7
 
 vim.opt.list = true
 vim.opt.listchars = {
+  extends = '>',
+  precedes = '<',
   tab = "<->", -- "| "
-  -- multispace = dot,
+  multispace = dot,
   trail = dot,
-  lead = " ",
   nbsp = "␣",
+  lead = dot,
+  -- lead = " ",
+  -- leadmultispace = "╷" .. dot,
 }
 
 -- Set default listing style to tree.
