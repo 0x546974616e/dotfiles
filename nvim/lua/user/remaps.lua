@@ -9,15 +9,15 @@
 -- :help Visual-mode
 -- :help Select-mode
 
--- gv gV gn gN g; g, gi ga g8 gx
+-- gv gV gn gN g; g, gi ga g8 gx g* gd gD gf
 -- :history / <C-f>
 
 vim.g.mapleader = " " -- ,
 vim.g.maplocalleader = " "
 
-vim.keymap.set("x", "p", [["_dP]])
 vim.keymap.set("i", "<C-c>", "<Esc>")
 
+vim.keymap.set({"x"}, "p", [["_dP]])
 vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
 vim.keymap.set({"n", "v"}, "c", [["_c]]) -- <leader>c
 

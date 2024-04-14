@@ -80,26 +80,22 @@ local function set_remove_trailing(event)
       pattern = "*", -- Everything so far
       group = remove_trailing_group,
       callback = function()
-        -- TODO
-        -- if !&binary && &filetype != 'diff'
-        --   vim.local_opt.diff ?
-        -- :h 'binary'
-        -- :h 'diff'
-        -- restaure previous search
-
-        -- getpos(".") setpos(".", view) ?
-        local view = vim.fn.winsaveview()
-        -- The e flag is used to skip error when nothing is found.
-        -- pcall(function() vim.cmd([[%s/\s\+$//e]]) end)
-        vim.cmd([[%s/\s\+$//ge]])
-        vim.fn.winrestview(view)
+        if not (vim.opt_local.diff:get() or vim.opt_local.binary:get()) then
+          -- vim.api.nvim_win_get_cursor(0)
+          local view = vim.fn.winsaveview()
+          -- The e flag is used to skip error when nothing is found.
+          -- pcall(function() vim.cmd([[%s/\s\+$//e]]) end)
+          vim.cmd([[keeppatterns %s/\s\+$//ge]])
+          vim.fn.winrestview(view)
+        end
       end,
     }
   )
 end
 
--- set_remove_trailing("FileWritePre")
--- set_remove_trailing("FileAppendPre")
--- set_remove_trailing("FilterWritePre")
--- set_remove_trailing("BufWritePre")
+-- https://vim.fandom.com/wiki/Remove_unwanted_spaces
+set_remove_trailing("FileWritePre")
+set_remove_trailing("FileAppendPre")
+set_remove_trailing("FilterWritePre")
+set_remove_trailing("BufWritePre")
 

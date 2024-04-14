@@ -3,7 +3,33 @@
 -- :help vim.diagnostic.*
 
 -- Open diagnostics floating window.
-vim.keymap.set("n", "df", vim.diagnostic.open_float)
+vim.keymap.set("n", "do", vim.diagnostic.open_float) -- <leader>df
+
+-- Open diagnostics location window.
+vim.keymap.set(
+  "n", "dl",
+  function()
+    local location = vim.fn.getloclist(0, { winid = 0 })
+    if location.winid == 0 then
+      vim.diagnostic.setloclist()
+    else
+      vim.cmd.lclose()
+    end
+  end
+)
+
+-- Toggle diagnostics quickfix window.
+vim.keymap.set(
+  "n", "dq", -- <leader>qf
+  function()
+    local quickfix = vim.fn.getqflist({ winid = 0 })
+    if quickfix.winid == 0 then
+      vim.diagnostic.setqflist()
+    else
+      vim.cmd.cclose()
+    end
+  end
+)
 
 -- Toggle diagnostics.
 vim.keymap.set(
@@ -25,32 +51,6 @@ vim.keymap.set(
           title = "[LSP]"
         }
       )
-    end
-  end
-)
-
--- Open diagnostics location window.
-vim.keymap.set(
-  "n", "gl",
-  function()
-    local location = vim.fn.getloclist(0, { winid = 0 })
-    if location.winid == 0 then
-      vim.diagnostic.setloclist()
-    else
-      vim.cmd.lclose()
-    end
-  end
-)
-
--- Toggle diagnostics quickfix window.
-vim.keymap.set(
-  "n", "dq", -- <leader>qf
-  function()
-    local quickfix = vim.fn.getqflist({ winid = 0 })
-    if quickfix.winid == 0 then
-      vim.diagnostic.setqflist()
-    else
-      vim.cmd.cclose()
     end
   end
 )
@@ -87,9 +87,28 @@ vim.api.nvim_create_autocmd(
       vim.keymap.set("n", "gr", vim.lsp.buf.references, options)
       vim.keymap.set("n", "go", vim.lsp.buf.type_definition, options)
       vim.keymap.set("n", "gj", vim.lsp.buf.implementation, options) -- gi
-      vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, options)
       vim.keymap.set("n", "gs", vim.lsp.buf.signature_help, options)
+      vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, options)
+
       vim.keymap.set("n", "K", vim.lsp.buf.hover, options)
+      vim.keymap.set(
+        "n", "Q",
+        function()
+            -- https://vi.stackexchange.com/a/44400
+            local base_win_id = vim.api.nvim_get_current_win()
+            local windows = vim.api.nvim_tabpage_list_wins(0)
+            for _, win_id in ipairs(windows) do
+                if win_id ~= base_win_id then
+                    local win_cfg = vim.api.nvim_win_get_config(win_id)
+                    if win_cfg.relative == "win" and win_cfg.win == base_win_id then
+                        vim.api.nvim_win_close(win_id, {})
+                        return
+                    end
+                end
+            end
+        end,
+        options
+      )
 
       vim.keymap.set(
         "n", "<leader>f",
@@ -110,19 +129,15 @@ vim.api.nvim_create_autocmd(
         options
       )
 
-      -- TODO
-
-      -- vim.keymap.set("n", "<space>wa", vim.lsp.buf.add_workspace_folder, options)
-
-      -- vim.keymap.set("n", "<space>wr", vim.lsp.buf.remove_workspace_folder, options)
-
-      -- vim.keymap.set("n", "<space>wl", function()
-      --   print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-      -- end, options)
-
-      -- comment
-      -- select functioon, block, etc.
-
+      vim.keymap.set("n", "<space>wa", vim.lsp.buf.add_workspace_folder, options)
+      vim.keymap.set("n", "<space>wr", vim.lsp.buf.remove_workspace_folder, options)
+      vim.keymap.set(
+        "n", "<space>wl",
+        function()
+          print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+        end,
+        options
+      )
     end,
   }
 )
