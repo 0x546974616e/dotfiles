@@ -9,4 +9,5 @@ path = ~/Fafa/.gitconfig
 
 [core]
 excludesfile = ~/.gitignore
+editor = nvim
 

@@ -1,0 +1,118 @@
+{
+  "telemetry.telemetryLevel": "off",
+
+  "window.zoomLevel": 1,
+  "explorer.autoReveal": false,
+  "explorer.compactFolders": false,
+  "vsicons.dontShowNewVersionMessage": true,
+  "git.openRepositoryInParentFolders": "always",
+
+  "workbench.tree.indent": 10,
+  "workbench.colorTheme": "Atom One Dark",
+  "workbench.iconTheme": "vscode-icons",
+  "workbench.colorCustomizations": {
+    "editorWhitespace.foreground": "#444"
+  },
+
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.detectIndentation": false,
+
+  "files.trimTrailingWhitespace": true,
+  "files.trimFinalNewlines": true,
+
+  "editor.rulers": [ 80 ],
+  "editor.lineNumbers": "relative",
+  "editor.cursorSurroundingLines": 4,
+  "editor.renderWhitespace": "boundary",
+  // "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?-_",
+  "editor.acceptSuggestionOnCommitCharacter": false,
+  "editor.accessibilitySupport": "off",
+  "editor.tokenColorCustomizations": {
+    "comments": "#6bba6e",
+    "textMateRules": [
+      {
+        "scope": [
+          "comment.line",
+          "comment.block",
+        ],
+        "settings": {
+          "fontStyle": ""
+        }
+      }
+    ],
+  },
+
+  // To improve performance
+  "extensions.experimental.affinity": {
+    "vscodevim.vim": 1
+  },
+
+  // NOTE:
+  // ae ie ii ai af gb aa ia ys ds cs <leader>w gr
+  // apt-get install gvfs libglib2.0-bin
+
+  "vim.leader": "<space>",
+
+  "vim.useSystemClipboard": false,
+  "vim.camelCaseMotion.enable": true,
+  "vim.replaceWithRegister": true,
+  "vim.easymotion": true,
+  "vim.foldfix": true,
+
+  "vim.highlightedyank.enable": true,
+  "vim.highlightedyank.color": "#a9dcf660",
+  "vim.highlightedyank.duration": 250,
+
+  "vim.handleKeys": {
+    "<C-d>": false,
+    "<C-s>": false,
+    "<C-z>": false,
+    "<C-y>": false,
+    "<C-c>": false,
+    "<C-p>": false,
+  },
+
+  "vim.normalModeKeyBindings": [
+    {
+      "before": [ "<leader>", "e" ],
+      "commands": [ "workbench.view.explorer" ],
+    },
+
+    {
+      "before": [ "g", "h" ],
+      "commands": [ "editor.action.showDefinitionPreviewHover" ],
+    },
+    {
+      "before": [ "g", "q" ],
+      "commands": [ "editor.action.quickFix" ]
+    },
+    {
+      "before": [ "g", "r" ],
+      "commands": [ "editor.action.referenceSearch.trigger" ]
+    },
+
+    {
+      "before": [ "g", "p", "d" ],
+      "commands": [ "editor.action.peekDefinition" ]
+    },
+
+    {
+      "before": [ "g", "j" ],
+      "commands": [ "editor.action.goToImplementation" ]
+    },
+    {
+      "before": [ "g", "p", "j" ],
+      "commands": [ "editor.action.peekImplementation" ]
+    },
+
+    {
+      "before": [ "g", "o" ],
+      "commands": [ "editor.action.goToTypeDefinition" ]
+    },
+    {
+      "before": [ "g", "p", "o" ],
+      "commands": [ "editor.action.peekTypeDefinition" ]
+    },
+  ],
+}

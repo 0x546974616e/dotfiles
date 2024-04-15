@@ -9,7 +9,7 @@
 -- :help Visual-mode
 -- :help Select-mode
 
--- gv gV gn gN g; g, gi ga g8 gx g* gd gD gf
+-- gv gV gn gN g; g, gi gI ga g8 gx g* gd gD gf
 -- :history / <C-f>
 
 vim.g.mapleader = " " -- ,
