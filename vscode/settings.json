@@ -114,5 +114,38 @@
       "before": [ "g", "p", "o" ],
       "commands": [ "editor.action.peekTypeDefinition" ]
     },
+
+    {
+      "before": [ "c", "i", "l" ],
+      "after": [ "c", "i", "]" ]
+    },
+    {
+      "before": [ "c", "a", "l" ],
+      "after": [ "c", "a", "]" ]
+    },
+    {
+      "before": [ "d", "i", "l" ],
+      "after": [ "d", "i", "]" ]
+    },
+    {
+      "before": [ "d", "a", "l" ],
+      "after": [ "d", "a", "]" ]
+    },
+    {
+      "before": [ "y", "i", "l" ],
+      "after": [ "y", "i", "]" ]
+    },
+    {
+      "before": [ "y", "a", "l" ],
+      "after": [ "y", "a", "]" ]
+    },
+    {
+      "before": [ "v", "i", "l" ],
+      "after": [ "v", "i", "]" ]
+    },
+    {
+      "before": [ "v", "a", "l" ],
+      "after": [ "v", "a", "]" ]
+    },
   ],
 }
