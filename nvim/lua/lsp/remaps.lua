@@ -94,6 +94,7 @@ vim.api.nvim_create_autocmd(
       vim.keymap.set(
         "n", "Q",
         function()
+            -- Close hovered window opened with K.
             -- https://vi.stackexchange.com/a/44400
             local base_win_id = vim.api.nvim_get_current_win()
             local windows = vim.api.nvim_tabpage_list_wins(0)
@@ -141,4 +142,3 @@ vim.api.nvim_create_autocmd(
     end,
   }
 )
-

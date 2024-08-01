@@ -6,6 +6,7 @@ a = add
 # ss = status
 ch = checkout
 c = commit
+m = merge
 p = push
 d = diff
 ds = diff --stat

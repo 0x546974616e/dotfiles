@@ -48,6 +48,8 @@
     "vscodevim.vim": 1
   },
 
+  "typst-lsp.exportPdf": "never",
+
   // NOTE:
   // ae ie ii ai af gb aa ia ys ds cs <leader>w gr
   // apt-get install gvfs libglib2.0-bin
@@ -77,6 +79,23 @@
     {
       "before": [ "<leader>", "e" ],
       "commands": [ "workbench.view.explorer" ],
+    },
+    {
+      "before": [ "<leader>", "r", "n" ],
+      "commands": [ "editor.action.rename" ],
+    },
+
+    {
+      "before": [ "<leader>", "h" ],
+      "after": [ "^" ]
+    },
+    {
+      "before": [ "<leader>", "l" ],
+      "after": [ "g", "_" ]
+    },
+    {
+      "before": [ "<leader>", "m" ],
+      "after": [ "8", "0", "|" ]
     },
 
     {
@@ -116,6 +135,15 @@
     },
 
     {
+      "before": [ "g", "p" ],
+      "commands": [ "editor.action.marker.prev" ]
+    },
+    {
+      "before": [ "g", "l" ],
+      "commands": [ "editor.action.marker.next" ]
+    },
+
+    {
       "before": [ "c", "i", "l" ],
       "after": [ "c", "i", "]" ]
     },
@@ -146,6 +174,14 @@
     {
       "before": [ "v", "a", "l" ],
       "after": [ "v", "a", "]" ]
+    },
+    {
+      "before": [ "<", "i", "l" ],
+      "after": [ "<", "i", "]" ]
+    },
+    {
+      "before": [ ">", "a", "l" ],
+      "after": [ ">", "a", "]" ]
     },
   ],
 }
