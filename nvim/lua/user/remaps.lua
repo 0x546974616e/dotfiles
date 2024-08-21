@@ -9,8 +9,10 @@
 -- :help Visual-mode
 -- :help Select-mode
 
--- gv gV gn gN g; g, gi gI ga g8 gx g* gd gD gf
+-- gv gV gn gN g; g, gi gI ga g8 gx g* gd gD gf gq gj
+-- <C-g> g<C-g> mA zM zR
 -- :history / <C-f>
+-- <C-x> <C-a>
 
 vim.g.mapleader = " " -- ,
 vim.g.maplocalleader = " "
@@ -58,4 +60,3 @@ vim.keymap.set("n", "<C-h>", "<C-w><C-h>")
 vim.keymap.set("n", "<C-l>", "<C-w><C-l>")
 vim.keymap.set("n", "<C-j>", "<C-w><C-j>")
 vim.keymap.set("n", "<C-k>", "<C-w><C-k>")
-

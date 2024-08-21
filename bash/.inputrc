@@ -1,0 +1,18 @@
+set editing-mode emacs # Still WIP
+
+$if mode=vi
+  set show-mode-in-prompt on
+  set vi-ins-mode-string \1\e[6 q\2 dada
+  set vi-cmd-mode-string \1\e[2 q\2 fafa
+
+  set keymap vi-command
+  # Bind substring history
+  "k": history-substring-search-backward
+  "j": history-substring-search-forward
+
+  # "gg": beginning-of-history
+  # "G": end-of-history
+
+  set keymap vi-insert
+  "\C-l": clear-screen
+$endif
