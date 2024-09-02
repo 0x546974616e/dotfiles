@@ -8,6 +8,7 @@ ch = checkout
 c = commit
 m = merge
 p = push
+pu = push --set-upstream origin
 d = diff
 ds = diff --stat
 l = log --decorate --oneline

@@ -33,6 +33,7 @@
     "textMateRules": [
       {
         "scope": [
+          // "comment",
           "comment.line",
           "comment.block",
         ],
@@ -182,6 +183,11 @@
     {
       "before": [ ">", "a", "l" ],
       "after": [ ">", "a", "]" ]
+    },
+
+    {
+      "before": [ "v", "$" ],
+      "after": [ "v", "g", "_" ]
     },
   ],
 }

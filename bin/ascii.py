@@ -14,7 +14,7 @@ def check(letters):
 
     # Then check width.
     assert len(set(map(len, ascii))) == 1, (
-      f'Letter "{letter}" is not even.'
+      f'Letter "{letter}" is not even.' # steady, regular?
     )
 
   return letters
@@ -372,7 +372,7 @@ letters = check({
   ],
 
   "6": [
-    "┌─╴",
+    "┌─╴", # ┐
     "├─┐",
     "└─┘",
   ],
@@ -392,7 +392,7 @@ letters = check({
   "9": [
     "┌─┐",
     "└─┤",
-    "╶─┘",
+    "╶─┘", # └
   ],
 
   " ": [
@@ -408,9 +408,9 @@ letters = check({
   ],
 
   "-": [
-    "  ",
-    "──",
-    "  ",
+    "  ", # "    ",
+    "──", # " ── ",
+    "  ", # "    ",
   ],
 
 })
