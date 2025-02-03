@@ -1,6 +1,8 @@
 source $HOME/.git-prompt.sh
 source $HOME/.tr-prompt.sh
 
+# export EDITOR='nvim'
+
 LS_COLORS=$LS_COLORS:'di=0;93:'
 export LS_COLORS
 
@@ -26,4 +28,3 @@ pathmunge "$HOME/bin/typst" after
 # pathmunge "$HOME/.amplify/bin" after
 
 unset pathmunge
-

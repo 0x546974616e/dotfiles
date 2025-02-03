@@ -20,6 +20,12 @@
 
   "files.trimTrailingWhitespace": true,
   "files.trimFinalNewlines": true,
+  "files.associations": {
+    ".gitaliases": "ini",
+    "Makefile.*": "makefile",
+    "*.make": "makefile",
+    "*.cl": "c",
+  },
 
   "editor.rulers": [ 80 ],
   "editor.lineNumbers": "relative",
@@ -44,8 +50,9 @@
     ],
   },
 
-  // To improve performance
+  "extensions.ignoreRecommendations": false,
   "extensions.experimental.affinity": {
+    // To improve performance?
     "vscodevim.vim": 1
   },
 
@@ -190,4 +197,22 @@
       "after": [ "v", "g", "_" ]
     },
   ],
+
+  /*
+  // https://rust-analyzer.github.io/manual.html#inlay-hints
+  "rust-analyzer.inlayHints.reborrowHints.enable": "never", // always, mutable
+  "rust-analyzer.inlayHints.lifetimeElisionHints.enable": "always",
+  "rust-analyzer.inlayHints.lifetimeElisionHints.useParameterNames": true,
+  "rust-analyzer.inlayHints.genericParameterHints.lifetime.enable": true,
+  "rust-analyzer.inlayHints.expressionAdjustmentHints.enable": "never",
+  "rust-analyzer.inlayHints.discriminantHints.enable": "always",
+  "rust-analyzer.inlayHints.implicitDrops.enable": true,
+  "rust-analyzer.lens.implementations.enable": false,
+  "rust-analyzer.lens.debug.enable": false,
+  "rust-analyzer.lens.run.enable": false,
+  "[rust]": {
+    "editor.defaultFormatter": "rust-lang.rust-analyzer",
+    "editor.inlayHints.enabled": "off",
+  },
+  */
 }

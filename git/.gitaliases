@@ -2,10 +2,13 @@
 
 [alias]
 a = add
+aa = add -A
 # s = status -s
 # ss = status
 ch = checkout
 c = commit
+cm = commit -m
+aacm = !git aa && git cm
 m = merge
 p = push
 pu = push --set-upstream origin

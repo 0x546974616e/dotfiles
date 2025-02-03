@@ -16,6 +16,7 @@ alias bat="batcat --pager never"
 alias batt='upower -i $(upower -e | grep BAT) | grep -E "state|to\ full|to\ empty|percentage" --color=never'
 alias hexedit="hexedit --color"
 alias c="cargo"
+alias g="git"
 
 # See terminal hyperlinks (a.k.a., OSC 8)
 # https://en.wikipedia.org/wiki/ANSI_escape_code#OSC_(Operating_System_Command)_sequences

@@ -58,6 +58,7 @@ vim.opt.scrolloff = 8
 -- Copy indent from current line when starting a new line (typing <CR>
 -- in Insert mode or when using the "o" or "O" command).
 vim.opt.autoindent = true
+vim.opt.smartindent = true
 
 -- (Nvim is always UTF-8)
 vim.opt.encoding = "utf-8"
@@ -130,4 +131,3 @@ smartcase
 undofile
 
 --]]
-
