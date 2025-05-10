@@ -6,6 +6,7 @@ alias la='ls -A'
 alias l='ls -l'
 alias lb='ls -lB'
 alias ll='ls -al'
+alias lt='ls -GAhltr'
 
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'

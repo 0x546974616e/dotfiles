@@ -5,6 +5,7 @@ a = add
 aa = add -A
 # s = status -s
 # ss = status
+st = stash
 ch = checkout
 c = commit
 cm = commit -m
@@ -15,7 +16,9 @@ pu = push --set-upstream origin
 d = diff
 ds = diff --stat
 l = log --decorate --oneline
-g = log --all --decorate --oneline --graph
+g = log --decorate --oneline --all --graph
+lt = l --pretty=format:'%C(auto)%h (%cs)%d %s'
+gt = g --pretty=format:'%C(auto)%h (%cs)%d %s'
 ll = log --decorate --oneline --name-status
 alias = "!f() { \
   git config --get-regexp '^alias' | grep -Ev \"alias\\.(s|alias\\b)\"; \
