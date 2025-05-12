@@ -1,5 +1,6 @@
-require("user.remaps")
-require("user.options")
-require("user.commands")
 require("user.colors")
+require("user.commands")
+require("user.netrw")
+require("user.options")
+require("user.remaps")
 

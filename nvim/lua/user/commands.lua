@@ -99,3 +99,20 @@ set_remove_trailing("FileAppendPre")
 set_remove_trailing("FilterWritePre")
 set_remove_trailing("BufWritePre")
 
+-- Set tabs instead of spaces for Makefile
+-- (autocmd FileType make setlocal noexpandtab)
+vim.api.nvim_create_autocmd(
+  "FileType", {
+    pattern = "make",
+    desc = "Ensures tabs are used on Makefiles.",
+    group = vim.api.nvim_create_augroup(
+      "titan-makefile-noexpandtab", {
+        clear = true,
+      }
+    ),
+    callback = function()
+      vim.opt_local.expandtab = false
+    end,
+  }
+)
+
