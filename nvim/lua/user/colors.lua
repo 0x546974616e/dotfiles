@@ -1,5 +1,15 @@
 
 local colorscheme = true
+local transparent = false
+
+if (transparent) then
+  vim.cmd([[
+    augroup titan_transparent_background
+      autocmd!
+      autocmd ColorScheme * highlight Normal ctermbg=NONE guibg=NONE
+    augroup END
+  ]])
+end
 
 -- https://github.com/chriskempson/base16-vim
 if (colorscheme) then

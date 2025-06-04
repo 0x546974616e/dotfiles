@@ -1,12 +1,13 @@
-alias rm='rm -i'
-alias cp='cp -v'
+alias cp='cp -vi'
+alias mv='mv -vi'
+alias rm='rm -vi'
 
 alias ls='ls -F --color=auto'
-alias la='ls -A'
-alias l='ls -l'
-alias lb='ls -lB'
-alias ll='ls -al'
 alias lt='ls -GAhltr'
+alias la='ls -A'
+alias lb='ls -lB'
+alias ll='ls -la'
+alias l='ls -l'
 
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
@@ -25,3 +26,4 @@ alias g="git"
 # https://github.com/Alhadis/OSC8-Adoption
 # See issue with xclip: https://github.com/kovidgoyal/kitty/issues/828
 alias cargodoccopy="cargo doc --color always 2>&1 | tee >(sed -nE 's/^.*Generated.*\\\\(\\/.*\.html).*$/\1/p' | tr -d '[[:space:]]' | xclip -r -selection clipboard 1> /dev/null 2> /dev/null)"
+

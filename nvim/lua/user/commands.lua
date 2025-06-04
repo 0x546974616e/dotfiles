@@ -80,11 +80,12 @@ local function set_remove_trailing(event)
       pattern = "*", -- Everything so far
       group = remove_trailing_group,
       callback = function()
+        -- Check for diff-mode (nvim -d) or binary-mode (nvim -b).
         if not (vim.opt_local.diff:get() or vim.opt_local.binary:get()) then
           -- vim.api.nvim_win_get_cursor(0)
           local view = vim.fn.winsaveview()
           -- The e flag is used to skip error when nothing is found.
-          -- pcall(function() vim.cmd([[%s/\s\+$//e]]) end)
+          -- pcall(function() vim.cmd([[%s/\s\+$//ge]]) end)
           vim.cmd([[keeppatterns %s/\s\+$//ge]])
           vim.fn.winrestview(view)
         end

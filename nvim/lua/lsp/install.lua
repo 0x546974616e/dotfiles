@@ -26,6 +26,7 @@ if not vim.uv.fs_stat(directory) then
     vim.notify(message, vim.log.levels.WARN)
   end
 
+  -- TODO: vim.fn.confirm(msg, '&Yes\n&No\n&Cancel', 1, 'Question')
   vim.ui.input(
     { prompt = "Clone nvim-lspconfig? (Y/n) " },
     function (input)
