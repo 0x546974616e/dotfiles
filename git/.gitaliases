@@ -9,9 +9,11 @@ cm = commit -m
 amend = commit --amend
 aacm = !git aa && git cm
 
-b = branch
 m = merge
 p = push
+
+b = branch
+bl = branch --list
 
 st = stash
 co = checkout
@@ -25,8 +27,8 @@ mt = mergetool
 lraw = log --decorate --oneline
 graw = log --decorate --oneline --graph
 
-# %C(blue)<%an>%C(reset)
 # %C(auto)%h (%cs)%d %s
+# %C(brightblue)<%an>%C(reset)
 l = lraw --pretty=format:'%C(yellow)%h %C(green)(%cs)%C(reset)%C(auto)%d%C(reset) %s%C(reset)'
 g = graw --pretty=format:'%C(yellow)%h %C(green)(%cs)%C(reset)%C(auto)%d%C(reset) %s%C(reset)'
 
