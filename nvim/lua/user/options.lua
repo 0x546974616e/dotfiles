@@ -55,6 +55,9 @@ vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 
+-- Disable default Python indentation (:help ft-python-plugin).
+vim.g.python_recommended_style = 0
+
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 4 -- 8
 

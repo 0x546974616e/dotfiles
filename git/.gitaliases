@@ -3,6 +3,7 @@
 [alias]
 a = add
 aa = add -A
+au = add -u
 
 c = commit
 cm = commit -m
@@ -10,7 +11,10 @@ amend = commit --amend
 aacm = !git aa && git cm
 
 m = merge
+r = rebase
+
 p = push
+pl = push --force-with-lease
 
 b = branch
 bl = branch --list
@@ -29,6 +33,7 @@ graw = log --decorate --oneline --graph
 
 # %C(auto)%h (%cs)%d %s
 # %C(brightblue)<%an>%C(reset)
+# printf '%*s\n' "${COLUMNS:-$(tput cols)}" 'test'
 l = lraw --pretty=format:'%C(yellow)%h %C(green)(%cs)%C(reset)%C(auto)%d%C(reset) %s%C(reset)'
 g = graw --pretty=format:'%C(yellow)%h %C(green)(%cs)%C(reset)%C(auto)%d%C(reset) %s%C(reset)'
 

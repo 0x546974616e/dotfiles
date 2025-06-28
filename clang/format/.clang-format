@@ -1,0 +1,34 @@
+# The extra indent or outdent of access modifiers, e.g. "public:".
+AccessModifierOffset: -2
+# Horizontally aligns arguments after an open bracket.
+AlignAfterOpenBracket: DontAlign
+# When using initialization for an array of structs aligns the fields into
+# columns.
+AlignArrayOfStructures: None
+# Style of aligning consecutive assignments.
+AlignConsecutiveAssignments: None
+# Style of aligning consecutive bit fields.
+AlignConsecutiveBitFields: None
+# Style of aligning consecutive declarations.
+AlignConsecutiveDeclarations: None
+# Style of aligning consecutive macro definitions.
+AlignConsecutiveMacros: None
+# Style of aligning consecutive short case labels. Only applies if
+# AllowShortCaseExpressionOnASingleLine or AllowShortCaseLabelsOnASingleLine
+# is true.
+AlignConsecutiveShortCaseStatements:
+  Enabled: false
+  AcrossEmptyLines: false
+  AcrossComments: false
+  AlignCaseArrows: false
+  AlignCaseColons: false
+AlignConsecutiveTableGenBreakingDAGArgColons: None
+AlignConsecutiveTableGenCondOperatorColons: None
+AlignConsecutiveTableGenDefinitionColons: None
+# Options for aligning backslashes in escaped newlines.
+AlignEscapedNewlines: Right
+# Horizontally align operands of binary and ternary expressions.
+AlignOperands: DontAlign
+# Control of trailing comments.
+AlignTrailingComments: false
+InsertNewlineAtEOF: true
